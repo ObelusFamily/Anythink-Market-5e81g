@@ -10,4 +10,18 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+    ### Setting up local environment
+
+    ([Install Docker](https://docs.docker.com/get-docker/))
+    * verify installation ran succesfully by running `docker -v` and `docker-compose -v` in your terminal and confirm version numbers are printed.
+    * if both of the above commands executed succesfully, run `docker-compose up`
+
+    Run migrations
+        * visit http://localhost:3000/api/ping
+            - you will receieve a migration error, the easiest way to run migrations is the Rails GUI that shows on the page. Click button `Run Migrations` this can also be done by running the command found on that page preceded by `docker exec` in your terminal if you prefer that method.
+
+    Navigate to Frontend and Register
+        * visit http://localhost:3001/register
+            - register with whatever nickname you'd like and save.
+
+    You're all set, Happy Coding!
