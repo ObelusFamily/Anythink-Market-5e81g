@@ -24,6 +24,7 @@ const SearchBar = (props) => {
     return (
         <input
         placeholder="What is it that you truly desire?"
+        id="search-box"
         onChange={handleChange}
         />
     );
