@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onChange: (pager, payload) =>
-    dispatch({ type: APPLY_TITLE_FILTER, pager, payload }),
+  onChange: (pager, payload, title) =>
+    dispatch({ type: APPLY_TITLE_FILTER, pager, payload, title }),
 });
 
 const SearchBar = (props) => {
@@ -18,7 +18,11 @@ const SearchBar = (props) => {
     ev.preventDefault();
 
     if (ev.target.value.length > 2) {
-      props.onChange(agent.Items.byTitle, agent.Items.byTitle(ev.target.value));
+      props.onChange(
+        agent.Items.byTitle,
+        agent.Items.byTitle(ev.target.value),
+        ev.target.value
+      );
     } else if (ev.target.value.length === 0) {
       props.onChange(agent.Items.all, agent.Items.all());
     }
