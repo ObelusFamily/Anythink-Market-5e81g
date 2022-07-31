@@ -8,8 +8,8 @@ const Banner = () => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">A Place to get</span>
-            <SearchBar />
+          <span id="get-part">A Place to get </span>
+          <SearchBar />
           <span> the cool stuff.</span>
         </div>
       </div>
