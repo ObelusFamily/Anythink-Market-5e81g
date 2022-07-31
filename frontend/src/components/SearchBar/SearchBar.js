@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-// import agent from "../../../src/agent"
+import agent from "../../../src/agent"
+import React from "react";
 import { APPLY_TITLE_FILTER } from "../../constants/actionTypes";
 
 const mapStateToProps = (state) => ({
@@ -16,9 +17,12 @@ const mapDispatchToProps = (dispatch) => ({
 const SearchBar = (props) => {
     const handleChange = (ev) => {
         ev.preventDefault();
-    //   props.onChange("search", agent.Items.byTitle, agent.Items.byTitle());
-    // props.title: ev.target.value
-    console.log(`SearchBar value: ${ev.target.value}, props: ${props.items}`)
+
+        if (ev.target.value.length > 2) {
+            props.onChange(agent.Items.byTitle, agent.Items.byTitle(ev.target.value)) 
+        } else if (ev.target.value.length === 0) {
+            props.onChange(agent.Items.all, agent.Items.all()) 
+        }
     };
 
     return (
@@ -26,6 +30,7 @@ const SearchBar = (props) => {
         placeholder="What is it that you truly desire?"
         id="search-box"
         onChange={handleChange}
+        style={{width: 275 + 'px'}}
         />
     );
 };
