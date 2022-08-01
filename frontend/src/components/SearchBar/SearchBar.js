@@ -32,8 +32,9 @@ const SearchBar = (props) => {
     <input
       placeholder="What is it that you truly desire?"
       id="search-box"
+      className="ml-2 mr-1"
       onChange={handleChange}
-      style={{ width: 275 + "px" }}
+      style={{ width: 275 + "px", display: "none" }}
     />
   );
 };
