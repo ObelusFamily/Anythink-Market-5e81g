@@ -31,7 +31,7 @@ const SearchBar = (props) => {
   return (
     <input
       placeholder="What is it that you truly desire?"
-      id="search-box"
+      id="hidden-search"
       className="ml-2 mr-1"
       onChange={handleChange}
       style={{ width: 275 + "px", display: "none" }}

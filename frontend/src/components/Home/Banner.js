@@ -3,7 +3,9 @@ import logo from "../../imgs/logo.png";
 import SearchBar from "../SearchBar/SearchBar";
 
 const revealSearchBar = () => {
-  document.getElementById("search-box").style.display = null;
+  const hiddenSearch = document.getElementById("hidden-search");
+  hiddenSearch.style.display = null;
+  hiddenSearch.id = "search-box";
 };
 
 const Banner = () => {
